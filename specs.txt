@@ -1,0 +1,75 @@
+REQUIREMENTS
+    1) Track individual inventory items
+        'In the weeds' look
+        CSV/SaaS look
+        In depth and contain all the data individually
+
+    2) Track groupings of inventory items and their statistics
+        'High-level' look
+        Graphs
+        statistics
+        visualizations
+        My View
+
+    3) Inventory item status
+    4) Automations around items (app store esque/buttons)
+        - trigger events
+        - move items to next phase? post-human intervention
+        - emails/texts
+            - for manual intervention/human approval
+
+    5) Projections
+        - future statistics
+        - ML?
+        - Image ML
+        - historical statistics
+
+    6) GUI for visualizations
+        - Different tabs for different views
+        - Graphs
+        - visualizations
+        - buttons for Automations
+        - React/Angular/Vue
+
+
+DATA MODEL:
+
+    Individual Items (inventory):
+        - Item ID (PK)
+        - Inventory Name (PK)
+        - cost
+        - Image (Where to store?)
+        - status (FK) -> Status.status_tag
+        - trigger Automations?
+        - project_id
+
+    Owners (people)
+        - PERSON_ID (PK)
+        - PHONE
+        - EMAIL
+        - F_NAME
+        - L_NAME
+
+    People-roles-projects (person to role/project)
+        - PERSON_ID (PK)
+        - role_id (FK)
+        - project_id (FK)
+
+    Status (ref table)
+        - status_tag (PK)
+        - status_name_long
+
+    Roles (ref table)
+        - role_id (PK)
+        - role_name
+
+    Projects (ref table)
+        - project_id (PK)
+        - project_name
+        - project_owner (FK) People.PERSON_ID
+
+
+THINGS TO FIGURE OUT:
+    - Multi-tenancy
+    - roles/permissions
+    - where/how to store images
