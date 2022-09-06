@@ -50,6 +50,11 @@ DATA MODEL:
         - F_NAME
         - L_NAME
 
+    Projects (ref table)
+        - project_id (PK)
+        - project_name
+        - project_owner (FK) People.PERSON_ID
+
     People-roles-projects (person to role/project)
         - PERSON_ID (PK)
         - role_id (FK)
@@ -63,10 +68,6 @@ DATA MODEL:
         - role_id (PK)
         - role_name
 
-    Projects (ref table)
-        - project_id (PK)
-        - project_name
-        - project_owner (FK) People.PERSON_ID
 
 
 THINGS TO FIGURE OUT:
